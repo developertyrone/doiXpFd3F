@@ -15,10 +15,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install tree package
+      - name: List folder
         run: |
           cd Q1
           ls -al
+     
+      - name: Run answer A
+        run: ./a.sh
+        working-directory: ./Q1
 
 
       
