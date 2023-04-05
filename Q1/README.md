@@ -21,7 +21,13 @@ To use answer script, you'll need to have the following tools installed:
   - Change to use geoiplookup as the solution since local lookup will be much faster without limit
   - The database should be not outdated in the packaged database, but should be sufficient to handle the log data in 2019.
   
-## Usage
+## Usage (Github Action)
+
+- Just go to https://github.com/developertyrone/doiXpFd3F/actions/workflows/q1.yml
+- Run the workflow
+- Check the log for the result
+
+## Usage (Local)
 
 - Q_A
   - ```bash
