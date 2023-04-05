@@ -23,6 +23,14 @@ jobs:
       - name: Run answer A
         run: ./a.sh
         working-directory: ./Q1
+      
+      - name: Run answer B
+        run: ./b.sh
+        working-directory: ./Q1
+        
+      - name: Run answer C
+        run: ./c.sh
+        working-directory: ./Q1
 
 
       
