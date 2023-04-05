@@ -14,7 +14,7 @@ To use answer script, you'll need to have the following tools installed:
   - geoip-bin
 
 
-## Assumptions
+## Explanations
 
 - Q_C
   - In [attemppts] folder, the program should work but there is rate limit on the external call 

@@ -8,6 +8,7 @@ import validators
 import logging
 from cachetools import cached, TTLCache
 
+chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
 dynamodb = boto3.resource('dynamodb', region_name=os.environ['REGION'])
 url_table = dynamodb.Table(os.environ["DYNAMODB_TABLE"])
 
@@ -23,10 +24,20 @@ def geturl(url):
     else:
         return None
 
-def generate_token(value, length = 9):
-    chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+def generate_token(value, length = 9, retry = 5):
     random.seed(value)
-    return ''.join(random.choice(chars) for _ in range(length))
+    token = ''.join(random.choice(chars) for _ in range(length))
+
+    dynamodb_response = url_table.query(
+        KeyConditionExpression=Key('shorturl').eq(token)
+    )
+    if dynamodb_response['Count'] > 0 and retry > 0:
+        if retry > 0:
+            return generate_token(value, retry=(retry - 1))
+        else:
+            return None
+    else:
+        return token
 
 def lambda_handler(event, context):
     try:
@@ -67,6 +78,10 @@ def lambda_handler(event, context):
             shorturl = basepath + "/" + shorturl
         else:
             token = generate_token(url)
+
+            if token == None:
+                return {'statusCode': 400, 'body': json.dumps({'error': "The short code has been taken"})}
+
             shorturl = basepath + "/" + token
             dynamodb_response = url_table.put_item(
                 Item={

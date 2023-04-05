@@ -22,6 +22,7 @@ resource "aws_lambda_function" "newurl" {
   handler          = "lambda_function.lambda_handler"
   source_code_hash = data.archive_file.newurl.output_base64sha256
   runtime          = "python3.9"
+  memory_size      = "${var.lambda_memory}"
 
   environment {
     variables = {

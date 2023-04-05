@@ -26,6 +26,12 @@ variable "apigateway_cachesize" {
   description = "The cachesize for the release stage"
 }
 
+variable "lambda_memory" {
+  type        = string
+  default     = "128"
+  description = "The cachesize for the lambda local cache"
+}
+
 variable "lambda_cachesize" {
   type        = string
   default     = "1024"
@@ -53,8 +59,3 @@ variable "dynamodb_table_write_cap" {
   default     = 10
   description = "The dynamo table write capacity"
 }
-
-//variable "short_url_domain" {
-//  type        = string
-//  description = "The domain name to use for short URLs."
-//}
