@@ -29,7 +29,7 @@ variable "apigateway_cachesize" {
 variable "lambda_memory" {
   type        = string
   default     = "128"
-  description = "The cachesize for the lambda local cache"
+  description = "The cachesize for the lambda memory"
 }
 
 variable "lambda_cachesize" {

@@ -21,18 +21,19 @@ This file defines the input variables for the Terraform module.
 
 ## Variables
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|----------|
-| `environment` | The environment of the application deployment | `string` | `"dev"` | Yes      |
+| Name | Description | Type | Default       | Required |
+|------|-------------|------|---------------|----------|
+| `environment` | The environment of the application deployment | `string` | `"dev"`       | Yes      |
 | `project` | The Application project name | `string` | `"shorturls"` | Yes       |
 | `region` | The AWS reegion to use for the Short URL project | `string` | `"ap-east-1"` | Yes       |
-| `apigateway_stage` | The API Gateway stage name for the release | `string` | `"prod"` | No       |
-| `apigateway_cachesize` | The cachesize for the release stage | `string` | `"0.5"` | No       |
-| `lambda_cachesize` | The cachesize for the lambda local cache | `string` | `"1024"` | No       |
-| `lambda_cachettl` | The cachesize for the lambda local cache ttl | `string` | `"10"` | No       |
-| `dynamodb_table` | The dynamo table to store the urls and shorturls | `string` | `"urls"` | No       |
-| `dynamodb_table_read_cap` | The dynamo table read capacity | `number` | `10` | No       |
-| `dynamodb_table_write_cap` | The dynamo table write capacity | `number` | `10` | No       |
+| `apigateway_stage` | The API Gateway stage name for the release | `string` | `"prod"`      | No       |
+| `apigateway_cachesize` | The cachesize for the release stage | `string` | `"0.5"`       | No       |
+| `lambda_cachesize` | The cachesize for the lambda local cache | `string` | `"1024"`      | No       |
+| `lambda_cachettl` | The cachesize for the lambda local cache ttl | `string` | `"10"`        | No       |
+| `lambda_memory` | The cachesize for the lambda memory | `string` | `"128"`       | No       |
+| `dynamodb_table` | The dynamo table to store the urls and shorturls | `string` | `"urls"`      | No       |
+| `dynamodb_table_read_cap` | The dynamo table read capacity | `number` | `10`          | No       |
+| `dynamodb_table_write_cap` | The dynamo table write capacity | `number` | `10`          | No       |
 
 
 ## Usage
