@@ -1,0 +1,24 @@
+name: 'q1'
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+#permissions:
+#  contents: read
+
+jobs:
+  install-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install tree package
+        run: |
+          cd Q1
+          ls -al
+
+
+      
