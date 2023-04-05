@@ -1,0 +1,9 @@
+# testing GET request
+curl --location --request GET 'https://d7e09ry00m.execute-api.ap-east-1.amazonaws.com/prod/bIxKYafLr'
+
+# testing POST request
+curl --location --request POST 'https://d7e09ry00m.execute-api.ap-east-1.amazonaws.com/prod/newurl' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "url": "https://www.google.com"
+}'

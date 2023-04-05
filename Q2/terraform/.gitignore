@@ -1,0 +1,7 @@
+/LOCALREADME.md
+LOCALREADME.md
+backup
+backup/*
+.terraform
+.terraform*
+.terraform/

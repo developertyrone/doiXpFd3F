@@ -16,6 +16,7 @@ cut -d' ' -f1 test.log  | sort | uniq -c | sort -n -r | awk '{print $2,$1}' | {
       if [[ ${#ipaddr} -gt 16 ]]; then
         country="$(geoiplookup6 $ipaddr | cut -d':' -f2|cut -d',' -f1|xargs)"
       else
+      # ipv4 lookup
         country="$(geoiplookup $ipaddr | cut -d':' -f2|cut -d',' -f1|xargs)"
       fi
       if [ ${countries[$country]+_} ] ; then
