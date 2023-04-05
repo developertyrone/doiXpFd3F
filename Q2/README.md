@@ -71,7 +71,7 @@ The architecture diagram is shown below:
 
 - Tech Stack
   - API gateway designed for high performance API services
-  - AWS Lambda low cost, autoscaling and easy to use for simple stateless API architecture
+  - AWS Lambda low cost, autoscaling and fast to implement for simple stateless API architecture
   - AWS DynamoDB , key value store, distributed database,  one of the best choice for the url/shorturl datastore without joins query
   
 - High Availability
@@ -102,10 +102,10 @@ The architecture diagram is shown below:
   - DAX cluster can later be served as the third layer cache for the DynamoDB
   
 - Programming Language
-  - Python is used as demo for easy to use and present the logic of the url shortener, a better choice will be Golang for high concurrent request and smaller footprint
+  - Python is used as demo for ease of use and present the logic of the url shortener, a better choice will be Golang for high concurrent request and smaller footprint
 
 - Expiring the legacy Data
-  - Added created field in case of house keeping for obsoleted and data cleansing
+  - Added created field in case of housekeeping for obsoleted and data cleansing
   
 - ShortURL generation
   - Current approach using a random generator with retry of 5 times(where the message "The short code has been taken" frequency is an indication of the collection should be filled up soon), a better approach would be using a global counter or MD5 hash 
