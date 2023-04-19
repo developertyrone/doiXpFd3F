@@ -28,7 +28,7 @@ cut -d' ' -f1 test.log  | sort | uniq -c | sort -n -r | awk '{print $2,$1}' | {
       if (( countries[$country] > max_count)); then
         max_country=$country
         max_count=$(( countries[$country] ))
-        echo "current top country is $max_country with $max_count"
+        #echo "current top country is $max_country with $max_count"
       fi
 
     fi
