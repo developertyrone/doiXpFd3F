@@ -1,3 +1,3 @@
 #!/bin/bash
 
-wc -l test.log
+grep 'HTTP' test.log | wc -l
