@@ -32,7 +32,7 @@ cut -d' ' -f1 test.log  | sort | uniq -c | sort -n -r | awk '{print $2,$1}' | {
       fi
 
     fi
-    printf "%s\n" "${countries[@]@K}"
+    #printf "%s\n" "${countries[@]@K}"
   done
   echo "Final top country is $max_country with $max_count"
 }
